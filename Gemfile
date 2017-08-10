@@ -9,6 +9,7 @@ gem 'administrate-field-image'
 gem 'administrate-field-json'
 gem 'administrate-field-refile'
 gem 'administrate-field-telephone'
+gem 'administrate-field-time'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'bourbon'
 gem 'oj'
@@ -57,6 +58,8 @@ gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'mqtt', :git => 'https://github.com/njh/ruby-mqtt.git'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -64,6 +67,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'dotenv-rails'
+  gem 'railroady'
 end
 
 group :development do

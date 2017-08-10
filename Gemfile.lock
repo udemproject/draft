@@ -21,6 +21,12 @@ GIT
       rack-protection (= 2.0.0.rc2)
       tilt (~> 2.0)
 
+GIT
+  remote: https://github.com/njh/ruby-mqtt.git
+  revision: 38958735278860d5793322c808e6c84694e2aa70
+  specs:
+    mqtt (0.5.0)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -89,6 +95,9 @@ GEM
     administrate-field-telephone (0.0.1)
       administrate
       rails (>= 4.2, < 5.1)
+    administrate-field-time (0.0.5)
+      administrate
+      rails (>= 4.2, < 5.2)
     arel (7.1.4)
     ast (2.3.0)
     autoprefixer-rails (6.7.7.1)
@@ -239,6 +248,7 @@ GEM
       rack (>= 0.9.1)
     rack-test (0.6.3)
       rack (>= 1.0)
+    railroady (1.5.3)
     rails (5.0.1)
       actioncable (= 5.0.1)
       actionmailer (= 5.0.1)
@@ -347,6 +357,7 @@ DEPENDENCIES
   administrate-field-json
   administrate-field-refile
   administrate-field-telephone
+  administrate-field-time
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
@@ -358,6 +369,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   meta_request
+  mqtt!
   oj
   omniauth-facebook
   omniauth-github
@@ -366,6 +378,7 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.0)
   pusher
+  railroady
   rails (= 5.0.1)
   rails-assets-tether (>= 1.3.2)!
   redis (~> 3.0)
@@ -389,4 +402,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.14.6
+   1.15.1

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :questions
     resources :reviews
     resources :locations
+    resources :badges
+    resources :notifications
 
     root to: 'attendees#index'
   end

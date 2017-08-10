@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509002312) do
+ActiveRecord::Schema.define(version: 20170731220414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20170509002312) do
     t.index ["event_id"], name: "index_attendees_on_event_id", using: :btree
     t.index ["team_id"], name: "index_attendees_on_team_id", using: :btree
     t.index ["user_id"], name: "index_attendees_on_user_id", using: :btree
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "message"
+    t.integer "sound"
+    t.index ["user_id"], name: "index_badges_on_user_id", using: :btree
   end
 
   create_table "events", force: :cascade do |t|
@@ -71,6 +78,16 @@ ActiveRecord::Schema.define(version: 20170509002312) do
     t.string   "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "badge_id"
+    t.string   "message"
+    t.time     "time"
+    t.integer  "weekday"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_notifications_on_badge_id", using: :btree
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -133,9 +150,11 @@ ActiveRecord::Schema.define(version: 20170509002312) do
   add_foreign_key "attendees", "events"
   add_foreign_key "attendees", "teams"
   add_foreign_key "attendees", "users"
+  add_foreign_key "badges", "users"
   add_foreign_key "events", "locations"
   add_foreign_key "invitations", "events"
   add_foreign_key "invitations", "users"
+  add_foreign_key "notifications", "badges"
   add_foreign_key "reviews", "events"
   add_foreign_key "reviews", "questions"
   add_foreign_key "reviews", "users", column: "reviewee_id"

@@ -4,7 +4,7 @@ class CreateNotifications < ActiveRecord::Migration[5.0]
       t.references :badge, foreign_key: true
       t.string :message
       t.time :time
-      t.integer :weekday
+      t.string :weekday
 
       t.timestamps
     end

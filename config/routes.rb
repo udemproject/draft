@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :locations
     resources :badges
     resources :notifications
+    # get 'updated_at', to: 'badge#updated_at', as: 'update'
 
     root to: 'attendees#index'
   end

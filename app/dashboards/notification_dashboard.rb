@@ -11,7 +11,7 @@ class NotificationDashboard < Administrate::BaseDashboard
     badge_id: Field::Number,
     message: Field::String,
     time: Field::Time,
-    weekday: Field::Number,
+    weekday: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20170731220414) do
     t.integer  "badge_id"
     t.string   "message"
     t.time     "time"
-    t.integer  "weekday"
+    t.string   "weekday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["badge_id"], name: "index_notifications_on_badge_id", using: :btree
